@@ -100,12 +100,11 @@ public class ControllerImpl implements Controller{
             if(discoverer.getMuseum().getExhibits().isEmpty()){
                 out.append(String.format(ConstantMessages.FINAL_DISCOVERER_MUSEUM_EXHIBITS, "None"));
 
-            }else{
+            }else {
                 out.append(String.format(ConstantMessages.FINAL_DISCOVERER_MUSEUM_EXHIBITS,
                         String.join(ConstantMessages.FINAL_DISCOVERER_MUSEUM_EXHIBITS_DELIMITER, discoverer.getMuseum().getExhibits())));
             }
         }
-        return out.toString().trim();
-
+        return out.toString();
     }
 }

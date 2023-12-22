@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class SpotImpl implements Spot{
+
     private String name;
     private Collection<String> exhibits;
 

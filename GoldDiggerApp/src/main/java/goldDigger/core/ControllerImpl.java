@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ControllerImpl implements Controller{
+
     private final Repository<Discoverer> discovererRepository;
     private final Repository<Spot> spotRepository;
     private int spotCount;
@@ -77,7 +78,10 @@ public class ControllerImpl implements Controller{
         Spot spot = this.spotRepository.byName(spotName);
         Operation operation = new OperationImpl();
         operation.startOperation(spot, discoverers);
-        long excluded = discoverers.stream().filter(d -> d.getEnergy() == 0).count();
+        long excluded = discoverers
+                .stream()
+                .filter(d -> d.getEnergy() == 0)
+                .count();
         this.spotCount++;
         return String.format(ConstantMessages.INSPECT_SPOT, spotName, excluded);
 
